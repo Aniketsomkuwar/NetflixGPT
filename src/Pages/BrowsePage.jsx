@@ -1,9 +1,10 @@
 import React from 'react'
+import BgImage from '../Assets/BgImage.jpg'
 
 const BrowsePage = () => {
     return (
         <div>
-            Browse Page
+            <div><img src={BgImage} alt="" srcset="" className='w-full h-screen' /></div>
         </div>
     )
 }

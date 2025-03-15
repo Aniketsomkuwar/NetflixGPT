@@ -2,6 +2,12 @@
 
     - Created App with VITE
     - Installed Tailwind
+    - Created Folder Structure
+        - Pages
+        - Components
+        - Utils
+    - Implemented React Router 6
+    - Sign In / Sign Up Form in same component
 
 # Features
 
