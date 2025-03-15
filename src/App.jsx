@@ -1,9 +1,15 @@
-
+import { Outlet } from "react-router-dom"
+import NavBar from "./Components/NavBar"
+import Footer from "./Components/Footer"
 
 const App = () => {
 
   return (
-    <div className="text-red-500" > Netflix GPT</div>
+    <>
+      <NavBar />
+      <Outlet />
+      <Footer />
+    </>
   )
 }
 

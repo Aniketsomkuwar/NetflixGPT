@@ -11,6 +11,7 @@
 
     - Sign Up Page
         - Form
+        - Redirect to SignIn Page
 
     - Browse Page
         - Header
