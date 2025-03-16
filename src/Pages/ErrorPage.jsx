@@ -1,7 +1,20 @@
 import React from 'react';
 import logo from '../Assets/MainLogo.jpg'
-
+import { auth } from '../Utils/firebase';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 const ErrorPage = () => {
+    const navigate = useNavigate();
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(() => {
+                navigate("/login")
+            })
+            .catch((error) => {
+                navigate("/error")
+                console.error("Sign out error:", error);
+            });
+    };
     return (
         <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
             <img
@@ -16,7 +29,7 @@ const ErrorPage = () => {
             <div className="flex space-x-4">
                 <button
                     className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded"
-                    onClick={() => window.location.href = '/login'}
+                    onClick={() => handleSignOut()}
                 >
                     Go to Login Page
                 </button>

@@ -14,13 +14,12 @@ const NavBar = () => {
 
             })
             .catch((error) => {
-                Navigate("/error")
                 console.error("Sign out error:", error);
             });
     };
 
     return (
-        <nav className="px-4 flex justify-between items-center bg-gradient-to-b from-zinc-900 via-zinc-700 absolute w-full">
+        <nav className="px-4 pb-5 flex justify-between items-center bg-gradient-to-b from-zinc-900 via-zinc-800 absolute w-full z-30">
             {/* Logo Section */}
             <div className="flex items-center">
                 <img

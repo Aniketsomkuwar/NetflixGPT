@@ -1,25 +1,17 @@
 import React, { useEffect } from 'react'
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies"
+import MainContainer from '../Components/MainContainer/MainContainer';
+import SecondaryContainer from '../Components/SecondaryContainer/SecondaryContainer';
 const BrowsePage = () => {
     useNowPlayingMovies();
 
     return (
-        <div
-            className='className=" text-white justify-center flex items-center h-screen'
-        // style={{
-        //     backgroundImage: `url(${BgImage})`,
-        //     backgroundSize: "cover",
-        //     backgroundPosition: "center",
-        //     backgroundRepeat: "no-repeat",
-        // }}
-        >
-            <div>
-                {/* Main movie */}
-            </div>
-            <div>
-                {/* Movie List Card */}
-            </div>
-        </div>
+        <div>
+            <MainContainer />
+
+            <SecondaryContainer />
+
+        </div >
     )
 }
 

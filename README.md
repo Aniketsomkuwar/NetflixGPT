@@ -18,6 +18,8 @@
     - Update Profile Username
     - Unsubscribed to the onAuthStateChanged Callback from App.jsx after logout
     - TMDB app register and fetched the api of movies
+    - Created MainPage and Imported Youtube Trailer
+    - Created UseTrailer Custom Hook
 
 # Features
 
