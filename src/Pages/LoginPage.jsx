@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import BgImage from "../Assets/BgImage.jpg";
-import checkValidData from "../Utils/Validate";
+import checkValidData from "../Utils/checkValidData.js";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,

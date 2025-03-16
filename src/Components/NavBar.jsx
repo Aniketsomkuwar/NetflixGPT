@@ -19,7 +19,7 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="px-4 pb-5 flex justify-between items-center bg-gradient-to-b from-zinc-900 via-zinc-800 absolute w-full z-30">
+        <nav className="px-4 pb-5 flex justify-between items-center bg-gradient-to-b from-black via-black to-transparent absolute w-full z-30">
             {/* Logo Section */}
             <div className="flex items-center">
                 <img
