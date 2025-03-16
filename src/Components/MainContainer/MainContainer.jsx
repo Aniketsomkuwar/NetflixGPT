@@ -12,7 +12,10 @@ const MainContainer = () => {
     if (!mainMovie) {
         return; // Or a loading spinner
     }
-    console.log(mainMovie);
+
+    console.log(movies);
+
+
 
     const { original_title, overview, id } = mainMovie;
     return (

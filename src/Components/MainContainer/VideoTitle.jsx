@@ -2,7 +2,7 @@ import React from 'react'
 
 const VideoTitle = (props) => {
     return (
-        <div className='pt-[20%] px-12 absolute bg-gradient-to-r from-black  w-screen aspect-video'>
+        <div className='pt-[15%] px-12 absolute bg-gradient-to-r from-black  w-screen aspect-video'>
             <h1 className=' text-6xl font-extrabold tracking-wide text-white'>{props.title}</h1>
             <div className='text-gray-500 pt-9 font-medium w-1/2 text-2xl'>{props.description}</div>
             <div className='flex gap-5 mt-8'>
