@@ -12,9 +12,11 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-
+        const { uid, email, displayName } = user;
+        dispatch(pushUserData({ uid: uid, email: email, displayName: displayName }));
+        navigate("/")
       } else {
         // User is signed out
 
@@ -22,6 +24,8 @@ const App = () => {
         navigate("/login")
       }
     });
+
+    return () => unSubscribe();
   }, [])
 
 

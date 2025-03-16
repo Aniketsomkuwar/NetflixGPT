@@ -1,7 +1,8 @@
-import React from 'react'
-import BgImage from '../Assets/BgImage.jpg'
-
+import React, { useEffect } from 'react'
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies"
 const BrowsePage = () => {
+    useNowPlayingMovies();
+
     return (
         <div
             className='className=" text-white justify-center flex items-center h-screen'
@@ -12,7 +13,12 @@ const BrowsePage = () => {
         //     backgroundRepeat: "no-repeat",
         // }}
         >
-            <div>Browse Page</div>
+            <div>
+                {/* Main movie */}
+            </div>
+            <div>
+                {/* Movie List Card */}
+            </div>
         </div>
     )
 }

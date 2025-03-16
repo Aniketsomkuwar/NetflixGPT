@@ -16,6 +16,8 @@
     - Used UseNavigate Hook to navigate the pages
     - Created Browse Page
     - Update Profile Username
+    - Unsubscribed to the onAuthStateChanged Callback from App.jsx after logout
+    - TMDB app register and fetched the api of movies
 
 # Features
 
@@ -34,3 +36,8 @@
             - Title and Description
             - Movie Suggestions
                 - Movie List * N
+
+# Features Need to Add
+
+    - Custom Hook for signin , sign up
+    - Filter According to Rated Movies

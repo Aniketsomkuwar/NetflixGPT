@@ -18,7 +18,7 @@ const Footer = () => {
                         href="https://github.com/Aniketsomkuwar/NetflixGPT"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-300 hover:text-white mx-2"
+                        className="text-red-600 hover:text-white mx-2 font-bold "
                     >
                         NetflixGPT Project Code
                     </a>

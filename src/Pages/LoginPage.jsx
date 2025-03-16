@@ -4,12 +4,10 @@ import checkValidData from "../Utils/Validate";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    updateProfile, signOut
+
 } from "firebase/auth";
 import { auth } from "../Utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { pushUserData } from "../Utils/ReduxSlice/userSlice";
 
 const LoginPage = () => {
     const [isSignInForm, setSignInForm] = useState(true);
@@ -17,8 +15,8 @@ const LoginPage = () => {
 
     const email = useRef(null);
     const password = useRef(null);
-    const userName = useRef(null);
-    const navigate = useNavigate();
+
+
     const dispatch = useDispatch();
 
     const handleButtonClick = () => {
@@ -35,7 +33,7 @@ const LoginPage = () => {
                 password.current.value
             )
                 .then((userCredential) => {
-                    navigate("/")
+
                     // after successful Login or signup
                 })
                 .catch((error) => {
@@ -51,22 +49,6 @@ const LoginPage = () => {
             )
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    updateProfile(user, {
-                        displayName: userName.current.value,
-                    }).then(() => {
-                        navigate("/")
-                        const { uid, email, displayName } = auth.currentUser;
-                        dispatch(pushUserData({ uid: uid, email: email, displayName: displayName }));
-
-                        // Profile updated!
-                        // ...
-                    }).catch((error) => {
-                        // An error occurred
-                        console.log(error);
-
-                        // ...
-                    });
-                    // after successful Login or signup
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -99,16 +81,6 @@ const LoginPage = () => {
                 <h2 className="text-2xl font-semibold mb-6 text-left">
                     {isSignInForm ? "Sign in" : "Sign Up"}
                 </h2>
-                {!isSignInForm && (
-                    <div className="mb-4">
-                        <input
-                            ref={userName}
-                            type="text"
-                            placeholder="Name"
-                            className="w-full p-4 border rounded bg-zinc-700 focus:outline-none focus:ring focus:border-blue-300"
-                        />
-                    </div>
-                )}
                 <div className="mb-4">
                     <input
                         ref={email}

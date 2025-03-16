@@ -1,13 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { auth } from '../Utils/firebase';
 import { signOut } from 'firebase/auth';
-import { removeUserData } from '../Utils/ReduxSlice/userSlice';
-import { useNavigate } from 'react-router-dom';
+
 
 const NavBar = () => {
     const user = useSelector((store) => store.user);
-    console.log(user);
 
 
     const handleSignOut = () => {
@@ -16,6 +14,7 @@ const NavBar = () => {
 
             })
             .catch((error) => {
+                Navigate("/error")
                 console.error("Sign out error:", error);
             });
     };
@@ -50,7 +49,7 @@ const NavBar = () => {
 
                     {/* User Info Section */}
                     <div className="flex items-center space-x-4">
-                        <div className="text-white font-semibold">{user?.displayName || 'Username'}</div>
+                        <div className="text-white font-semibold">{user?.email || 'Username'}</div>
                         <button
                             className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             onClick={handleSignOut}
