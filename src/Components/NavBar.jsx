@@ -1,35 +1,65 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { auth } from '../Utils/firebase';
+import { signOut } from 'firebase/auth';
+import { removeUserData } from '../Utils/ReduxSlice/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
+    const user = useSelector((store) => store.user);
+    console.log(user);
+
+
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(() => {
+
+            })
+            .catch((error) => {
+                console.error("Sign out error:", error);
+            });
+    };
+
     return (
-        <nav className="bg-zinc-600 p-4 flex justify-between items-center">
+        <nav className="px-4 flex justify-between items-center bg-gradient-to-b from-zinc-900 via-zinc-700 absolute w-full">
             {/* Logo Section */}
             <div className="flex items-center">
                 <img
                     src="https://cdn1.iconfinder.com/data/icons/logos-brands-in-colors/7500/Netflix_Logo_RGB-512.png"
                     alt="Netflix Logo"
-                    className="h-8 mr-2" // Adjusted size and spacing
+                    className="w-20 mr-2"
                 />
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/1024px-ChatGPT-Logo.svg.png"
                     alt="ChatGPT Logo"
-                    className="h-8" // Adjusted size
+                    className="w-10"
                 />
             </div>
 
-            {/* Search Bar (Optional) */}
-            <div className="flex items-center flex-grow mx-4">
-                <input
-                    type="text"
-                    placeholder="Search..."
-                    className="bg-zinc-500 text-white p-2 rounded-md w-full focus:outline-none" // Styled search bar
-                />
-            </div>
+            {/* Conditional Search Bar and User Info Section */}
+            {user && (
+                <div className="flex items-center space-x-4 flex-grow justify-end">
+                    {/* Search Bar */}
+                    <div className="flex items-center flex-grow mx-8">
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            className="bg-zinc-500 text-white p-2 rounded-md w-full focus:outline-none"
+                        />
+                    </div>
 
-            {/* User Info Section */}
-            <div className="flex items-center space-x-4">
-                <div className="text-white font-semibold">User Name</div>
-            </div>
+                    {/* User Info Section */}
+                    <div className="flex items-center space-x-4">
+                        <div className="text-white font-semibold">{user?.displayName || 'Username'}</div>
+                        <button
+                            className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            onClick={handleSignOut}
+                        >
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };
