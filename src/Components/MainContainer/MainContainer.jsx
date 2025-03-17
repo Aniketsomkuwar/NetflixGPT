@@ -13,7 +13,6 @@ const MainContainer = () => {
         return; // Or a loading spinner
     }
 
-    console.log(movies);
 
 
 

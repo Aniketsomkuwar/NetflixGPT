@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { auth } from '../Utils/firebase';
 import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 
 const NavBar = () => {
     const user = useSelector((store) => store.user);
-
+    const searchValue = useRef();
+    const navigate = useNavigate();
 
     const handleSignOut = () => {
         signOut(auth)
@@ -18,6 +20,20 @@ const NavBar = () => {
             });
     };
 
+
+    const handleSearchValue = () => {
+        const searchParam = searchValue.current.value;
+
+        if (searchParam === '') {
+
+
+
+        } else {
+            navigate(`/search/${searchParam}`)
+        }
+
+    }
+
     return (
         <nav className="px-4 pb-5 flex justify-between items-center bg-gradient-to-b from-black via-black to-transparent absolute w-full z-30">
             {/* Logo Section */}
@@ -28,7 +44,7 @@ const NavBar = () => {
                     className="w-20 mr-2"
                 />
                 <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/1024px-ChatGPT-Logo.svg.png"
+                    src="https://static.vecteezy.com/system/resources/thumbnails/021/608/790/small_2x/chatgpt-logo-chat-gpt-icon-on-black-background-free-vector.jpg"
                     alt="ChatGPT Logo"
                     className="w-10"
                 />
@@ -41,8 +57,12 @@ const NavBar = () => {
                     <div className="flex items-center flex-grow mx-8">
                         <input
                             type="text"
-                            placeholder="Search..."
+                            placeholder="Type the movie genre you want and press Enter ↲"
+                            ref={searchValue}
                             className="bg-zinc-500 text-white p-2 rounded-md w-full focus:outline-none"
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') handleSearchValue();
+                            }}
                         />
                     </div>
 

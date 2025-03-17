@@ -8,8 +8,8 @@ const MovieList = ({ title, movies }) => {
     if (!Array.isArray(movies) || movies.length === 0) return null;
     return (
         <div className='py-5'>
-            <h1 className='font-bold text-gray-400 text-xl mb-2'>{title}</h1>
-            <div className='flex gap-5 overflow-x-scroll '>
+            <h1 className='font-bold text-white text-xl mb-2'>{title}</h1>
+            <div className='flex gap-5 overflow-x-scroll no-scrollbar '>
 
                 <div className='flex gap-2'>
                     {movies?.map((movie) => (

@@ -9,6 +9,7 @@ import ErrorPage from './Pages/ErrorPage.jsx'
 import BrowsePage from './Pages/BrowsePage.jsx'
 import { Provider } from 'react-redux'
 import appStore from './Utils/appStore.js'
+import SearchPage from './Pages/SearchPage.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />
+      },
+      {
+        path: "/search/:searchValue",
+        element: <SearchPage />
       }
     ]
   },

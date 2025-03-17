@@ -16,7 +16,7 @@ const App = () => {
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(pushUserData({ uid: uid, email: email, displayName: displayName }));
-        navigate("/")
+        // navigate("/")
       } else {
         // User is signed out
 

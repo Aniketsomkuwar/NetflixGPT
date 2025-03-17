@@ -7,7 +7,7 @@ import {
 
 } from "firebase/auth";
 import { auth } from "../Utils/firebase";
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
     const [isSignInForm, setSignInForm] = useState(true);
@@ -17,7 +17,7 @@ const LoginPage = () => {
     const password = useRef(null);
 
 
-    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleButtonClick = () => {
         const message = checkValidData(email.current.value, password.current.value);
@@ -33,7 +33,7 @@ const LoginPage = () => {
                 password.current.value
             )
                 .then((userCredential) => {
-
+                    navigate("/")
                     // after successful Login or signup
                 })
                 .catch((error) => {
@@ -49,6 +49,7 @@ const LoginPage = () => {
             )
                 .then((userCredential) => {
                     const user = userCredential.user;
+                    navigate("/")
                 })
                 .catch((error) => {
                     const errorCode = error.code;

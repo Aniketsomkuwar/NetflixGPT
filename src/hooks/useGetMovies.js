@@ -16,13 +16,13 @@ const useGetMovies = (list, link) => {
 
         if (list === 0) {
             dispatch(addPopularMovies(json.results));
-            console.log(json.results);
+            // console.log('popular =>', json.results);
         } else if (list === 1) {
             dispatch(addNowPlayingMovies(json.results));
-            console.log(json.results);
+            // console.log('Now Playing =>', json.results);
         } else {
             dispatch(addUpcomingMovies(json.results));
-            console.log(json.results);
+            // console.log('upcoming =>', json.results);
         }
 
     }

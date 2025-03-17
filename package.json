@@ -14,8 +14,10 @@
     "@tailwindcss/vite": "^4.0.14",
     "firebase": "^11.4.0",
     "formik": "^2.4.6",
+    "openai": "^4.87.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-loading-indicators": "^1.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.3.0",
     "tailwindcss": "^4.0.14"

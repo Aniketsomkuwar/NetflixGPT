@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MovieCard = ({ image, name, movieId }) => {
+const MovieCard = ({ image, name }) => {
     const imageUrl = `https://image.tmdb.org/t/p/original${image}`; // Construct image URL
 
     return (
