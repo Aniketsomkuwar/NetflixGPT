@@ -1,5 +1,18 @@
 # Netflix GPT - Movie Discovery App
 
+## Sign In Page
+![Alt text](ReadmeImages/signin.jpg)
+
+## Sign Up Page
+![Alt text](ReadmeImages/signup.jpg)
+
+## Main Pages
+![Alt text](ReadmeImages/mainpage.jpg)
+![Alt text](ReadmeImages/mainpage2.jpg)
+
+## Search Page
+![Alt text](ReadmeImages/search.jpg)
+
 This project is a Netflix-inspired movie browsing application, leveraging React, Redux, Firebase, and the TMDB API to provide a seamless and engaging user experience.
 
 ## Project Setup
