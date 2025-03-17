@@ -1,16 +1,20 @@
 # Netflix GPT - Movie Discovery App
 
 ## Sign In Page
+
 ![Alt text](ReadmeImages/signin.jpg)
 
 ## Sign Up Page
+
 ![Alt text](ReadmeImages/signup.jpg)
 
 ## Main Pages
+
 ![Alt text](ReadmeImages/mainpage.jpg)
 ![Alt text](ReadmeImages/mainpage2.jpg)
 
 ## Search Page
+
 ![Alt text](ReadmeImages/search.jpg)
 
 This project is a Netflix-inspired movie browsing application, leveraging React, Redux, Firebase, and the TMDB API to provide a seamless and engaging user experience.
@@ -23,6 +27,7 @@ This project is a Netflix-inspired movie browsing application, leveraging React,
   - `Pages`: Houses distinct application views.
   - `Components`: Contains reusable UI components.
   - `Utils`: Stores utility functions and constants.
+  - `hooks`: Contains custom hooks for data fetching and other functionalities.
 - **React Router v6:** Implemented React Router v6 for smooth client-side navigation.
 
 ## Core Features
@@ -50,15 +55,15 @@ This project is a Netflix-inspired movie browsing application, leveraging React,
   - **Categorized Movie Lists:**
     - Organized movies into categories such as popular, upcoming, and more for easy navigation.
     - Developed reusable **Movie Cards** for consistent and user-friendly browsing.
-- **Custom `useTrailer` Hook:** Created a custom hook to efficiently fetch and manage movie trailers, improving performance and code organization.
+- **Custom `useFetchTrailer` Hook:** Created a custom hook to efficiently fetch and manage movie trailers, improving performance and code organization.
 - **Search Functionality:**
-  - Implemented a search page that uses Google's gemini api to get movie titles based on a search query.
-  - Searched movies are displayed using the TMDB api.
+  - Implemented a search page that uses Google's Gemini API to get movie titles based on a search query.
+  - Searched movies are displayed using the TMDB API.
   - Implemented a search limit of 5 searches per user.
 - **Redux Movie Slice:** Created a Redux store with a dedicated Movie slice for centralized movie data management.
-  - Added searched movies and popular movies to the redux store.
-  - Added upcoming movies to the redux store.
-- **Loading indicators:** Added loading indicators to the search page.
+  - Added searched movies and popular movies to the Redux store.
+  - Added upcoming movies to the Redux store.
+- **Loading Indicators:** Added loading indicators to the search page.
 
 ## Future Enhancements
 
