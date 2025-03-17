@@ -1,48 +1,60 @@
-# Netflix GPT
+# Netflix GPT - Movie Discovery App
 
-A Netflix-inspired movie browsing app built with React, Firebase, and TMDB API.
+This project is a Netflix-inspired movie browsing application, leveraging React, Redux, Firebase, and the TMDB API to provide a seamless and engaging user experience.
 
 ## Project Setup
 
-- Initialized the project using **Vite**
-- Installed **Tailwind CSS** for styling
-- Organized folder structure:
-  - **Pages** (for different app views)
-  - **Components** (for reusable UI elements)
-  - **Utils** (for utility functions)
-- Implemented **React Router v6** for navigation
+- **Vite:** Utilized Vite for rapid development and build processes.
+- **Tailwind CSS:** Employed Tailwind CSS for efficient and responsive styling.
+- **Structured Architecture:**
+  - `Pages`: Houses distinct application views.
+  - `Components`: Contains reusable UI components.
+  - `Utils`: Stores utility functions and constants.
+- **React Router v6:** Implemented React Router v6 for smooth client-side navigation.
 
-## Features Implemented
+## Core Features
 
-### Authentication
+### Enhanced Authentication
 
-- **Sign In / Sign Up** form in a single component
-- Form validation with error handling
-- Used **useRef Hook** for form interactions
-- Integrated **Firebase Authentication**:
-  - User registration
-  - Account login/logout
-  - Profile username updates
-- Created a **Redux store** with a **User Slice**
-- Used **useNavigate Hook** for page redirection
-- Unsubscribed from **onAuthStateChanged** callback upon logout
+- **Unified Authentication Form:** Integrated a single component for both sign-in and sign-up, streamlining the user experience.
+- **Robust Form Validation:** Implemented comprehensive form validation with detailed error handling for improved user feedback.
+- **`useRef` Hook:** Leveraged the `useRef` hook for efficient form interaction and manipulation.
+- **Firebase Authentication Integration:**
+  - User registration and account creation.
+  - Secure user login and logout functionalities.
+  - Profile username updates to personalize user accounts.
+- **Redux User Slice:** Created a Redux store with a dedicated User Slice for centralized user state management.
+- **`useNavigate` Hook:** Utilized the `useNavigate` hook for seamless page redirection after authentication events.
+- **`onAuthStateChanged` Cleanup:** Implemented proper unsubscription from the `onAuthStateChanged` callback upon logout to prevent memory leaks and ensure efficient resource management.
 
-### Movie Browsing
+### Dynamic Movie Browsing
 
-- Registered on **TMDB** and fetched movie data via API
-- Implemented a **Browse Page**:
-  - **Main Movie Section**
-    - Background trailer using **YouTube API**
-    - Displayed movie title and description
-  - **Movie List Sections**
-    - Categorized movies (popular, upcoming, etc.)
-    - Created **Movie Cards** for easy browsing
-- Developed a **custom hook (useTrailer)** to fetch trailers efficiently
+- **TMDB API Integration:** Registered on TMDB and fetched comprehensive movie data via API for a rich movie browsing experience.
+- **Browse Page Functionality:**
+  - **Main Movie Section:**
+    - Dynamic background trailer integration using the YouTube API, creating an immersive experience.
+    - Clear display of movie titles and descriptions for quick information access.
+  - **Categorized Movie Lists:**
+    - Organized movies into categories such as popular, upcoming, and more for easy navigation.
+    - Developed reusable **Movie Cards** for consistent and user-friendly browsing.
+- **Custom `useTrailer` Hook:** Created a custom hook to efficiently fetch and manage movie trailers, improving performance and code organization.
+- **Search Functionality:**
+  - Implemented a search page that uses Google's gemini api to get movie titles based on a search query.
+  - Searched movies are displayed using the TMDB api.
+  - Implemented a search limit of 5 searches per user.
+- **Redux Movie Slice:** Created a Redux store with a dedicated Movie slice for centralized movie data management.
+  - Added searched movies and popular movies to the redux store.
+  - Added upcoming movies to the redux store.
+- **Loading indicators:** Added loading indicators to the search page.
 
-## Features to be Added
+## Future Enhancements
 
-- Custom hooks for **sign-in** and **sign-up** logic
-- Movie filtering based on ratings
+- Custom hooks for streamlined sign-in and sign-up logic to further improve code organization and reusability.
+- Advanced movie filtering options based on ratings to enhance user search capabilities.
+- Implement responsive design for mobile devices.
+- Add more categories to browse page.
+- Add movie details page.
+- Add user profile page.
 
 ---
 
