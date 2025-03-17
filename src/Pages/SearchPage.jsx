@@ -13,7 +13,11 @@ const SearchPage = () => {
 
     const searchText = param?.searchValue;
 
-    const movies = useSelector((store) => store?.movies?.searchedMovies[0]);
+
+    // why flat ? to combine all the arrays data
+    const movies = useSelector((store) => store?.movies?.searchedMovies.flat() || store?.movies?.popularMovies);
+
+
 
     if (!Array.isArray(movies) || movies.length === 0) return null;
 
@@ -62,6 +66,8 @@ const SearchPage = () => {
 
             const gptMovies = data.candidates[0].content.parts[0].text.split("\n");
 
+
+
             // ------------------till here everything is correct ------------------------//
 
             //this will return array of promise
@@ -80,7 +86,6 @@ const SearchPage = () => {
 
     useEffect(() => {
         handleGPTSearch(searchText);
-
     }, [searchText]);
 
     return (
@@ -92,7 +97,7 @@ const SearchPage = () => {
                     </div>
                 </div>
             )}
-            {loading && (
+            {!loading && (
                 <div className="pt-[5%] grid grid-cols-5 gap-4 justify-items-center">
                     {movies.map((movie) => (
                         <MovieCard
