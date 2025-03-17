@@ -15,7 +15,7 @@ const SearchPage = () => {
 
 
     // why flat ? to combine all the arrays data
-    const movies = useSelector((store) => store?.movies?.searchedMovies.flat() || store?.movies?.popularMovies);
+    const movies = useSelector((store) => store?.movies?.searchedMovies?.flat() || store?.movies?.popularMovies);
 
 
 
